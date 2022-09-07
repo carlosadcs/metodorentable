@@ -92,41 +92,8 @@
 		</div>
 	</div>
 <!-- Video VSL !-->	
-	
-	    <!-- CTA !-->
-    
-    <!-- Script Delay !-->
-    <script type="text/javascript">    
-    var tmin = 0; //troque o numeral pelos minutos de pitch e ; no final
-    var tseg = 10; //troque o numeral pelos segundos do pitch e ; no final
 
-    // ~ ATENÇÃO!!! NÃO MEXA EM NADA DAQUI PARA BAIXO! ~ //
-
-    var tpitch = (tmin * 60000) + (tseg * 1000);
-    setTimeout("show()", tpitch);
-    console.log('pitch em:', tpitch,'ms - totalizando',tmin,'min','e',tseg,'seg'); 
-    function show(){
-        var list = document.getElementsByClassName("ocultar");
-        for (var i = 0; i < list.length; i++) {
-            list[i].style.visibility = "visible";
-            list[i].style.display = "block";
-        }
-    }
-    </script>
-    <style>.ocultar{display:none;}</style>
-    <!-- Script Delay !-->
-    
-    <section class="delay ocultar" id="exibir">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-md-12 col-lg-12">
-                    <!-- Link da página de destinho !-->
-                    <a href="#oferta" class="cta-vsl pulsar">QUIERO GANAR DINERO CON VIDEOS</a>
-                </div>          
-            </div>
-        </div>
-    </section>
-    <!-- CTA !-->
+	<script>if(!document.querySelector('script[src^="https://player.pandavideo.com.br/api.v2.js"]')){let s=document.createElement('script'); s.src='https://player.pandavideo.com.br/api.v2.js'; s.async=true; document.head.appendChild(s);}window.pandascripttag=window.pandascripttag || [];window.pandascripttag.push(function (){const p=new PandaPlayer('panda-e10e9143-9928-409f-889b-ad1f5577a790',{onReady(){p.loadButtonInTime({fetchApi: true})}});})</script><div id="32a967ee-94bc-4be4-bf82-94e48ddcdaeb"></div>
 	
 <!-- Comentários do facebook !-->
 	<div class="facebook-comments">
