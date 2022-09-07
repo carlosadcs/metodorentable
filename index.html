@@ -92,6 +92,42 @@
 		</div>
 	</div>
 <!-- Video VSL !-->	
+	
+	    <!-- CTA !-->
+    
+    <!-- Script Delay !-->
+    <script type="text/javascript">    
+    var tmin = 0; //troque o numeral pelos minutos de pitch e ; no final
+    var tseg = 10; //troque o numeral pelos segundos do pitch e ; no final
+
+    // ~ ATENÇÃO!!! NÃO MEXA EM NADA DAQUI PARA BAIXO! ~ //
+
+    var tpitch = (tmin * 60000) + (tseg * 1000);
+    setTimeout("show()", tpitch);
+    console.log('pitch em:', tpitch,'ms - totalizando',tmin,'min','e',tseg,'seg'); 
+    function show(){
+        var list = document.getElementsByClassName("ocultar");
+        for (var i = 0; i < list.length; i++) {
+            list[i].style.visibility = "visible";
+            list[i].style.display = "block";
+        }
+    }
+    </script>
+    <style>.ocultar{display:none;}</style>
+    <!-- Script Delay !-->
+    
+    <section class="delay ocultar" id="exibir">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-md-12 col-lg-12">
+                    <!-- Link da página de destinho !-->
+                    <a href="#oferta" class="cta-vsl pulsar">QUIERO GANAR DINERO CON VIDEOS</a>
+                </div>          
+            </div>
+        </div>
+    </section>
+    <!-- CTA !-->
+	
 <!-- Comentários do facebook !-->
 	<div class="facebook-comments">
 		<div class="container">
