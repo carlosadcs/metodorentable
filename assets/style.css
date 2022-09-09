@@ -393,5 +393,9 @@ img.icon-obg {
 	.pirataria h2, .pirataria p {
 		text-align: center;
 	}
+	
+	a.cta-vsl {
+    width: 100%;
+  }
 }
 /* Responsivo */
