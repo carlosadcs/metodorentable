@@ -37,7 +37,6 @@
   src="https://www.facebook.com/tr?id=594952732183820&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-
 <link rel="preload" href="https://player-vz-50b57fb7-72c.tv.pandavideo.com.br/embed/css/styles.css" as="style">
 <link rel="preload" href="https://player-vz-50b57fb7-72c.tv.pandavideo.com.br/embed/js/main.bundle.js" as="script">
 <link rel="prerender" href="https://player-vz-50b57fb7-72c.tv.pandavideo.com.br/embed/?v=e10e9143-9928-409f-889b-ad1f5577a790">
@@ -49,6 +48,85 @@
 <link rel="dns-prefetch" href="https://b-vz-50b57fb7-72c.tv.pandavideo.com.br">
 <link rel="dns-prefetch" href="https://player-vz-50b57fb7-72c.tv.pandavideo.com.br">
 <link rel="dns-prefetch" href="https://vz-50b57fb7-72c.b-cdn.net">
+<!-- TRAQUEAMENTO PV -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
+<script>
+$('a[href^="#"]').on('click', function(e) {
+    e.preventDefault();
+    var id = $(this).attr('href'),
+            targetOffset = $(id).offset().top;
+            
+    $('html, body').animate({ 
+        scrollTop: targetOffset - 100
+    }, 500);
+});
+    function parseQuery(qstr) {
+        var query = {};
+        var a = (qstr[0] === '?' ? qstr.substr(1) : qstr).split('&');
+        for (var i = 0; i < a.length; i++) {
+            var b = a[i].split('=');
+            query[decodeURIComponent(b[0])] = decodeURIComponent(b[1] || '');
+        }
+        return query;
+    }
+
+    function encodeQuery(obj) {
+        var str = [];
+        for (var p in obj)
+            if (obj.hasOwnProperty(p)) {
+                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+            }
+        return str.join("&");
+    }
+
+    function addQueryParameterToDomain(key, value) {
+        var links = document.querySelectorAll('a[href].checkout'),
+            linksLength = links.length,
+            index,
+            queryIndex,
+            queryString,
+            query,
+            url,
+            domain,
+            colonSlashSlash;
+
+        for (index = 0; index < linksLength; ++index) {
+            url = links[index].href,
+                queryIndex = url.indexOf('?'),
+                colonSlashSlash = url.indexOf('://');
+
+            domain = url.substring(colonSlashSlash + 3);
+            domain = domain.substring(0, domain.indexOf('/'));
+
+            if (queryIndex === -1) {
+                url += '?' + key + '=' + value;
+            } else {
+                queryString = url.substring(queryIndex);
+                url = url.substring(0, queryIndex);
+                query = parseQuery(queryString);
+
+                query[key] = value;
+
+                url += '?' + encodeQuery(query);
+            }
+
+            links[index].href = url;
+        }
+    }
+
+    function addQuery(item) {
+        var arr = item.split('=');
+        if(arr[0] != null && arr[1] != undefined) {
+                addQueryParameterToDomain(arr[0], arr[1]);
+        }
+    }
+
+    jQuery(function() {
+        var url = window.location.search.replace("?", "");
+        var itens = url.split('&');
+        itens.forEach(addQuery);
+    });
+</script>
 
 </head>
 <body>
@@ -59,8 +137,13 @@
 <!-- Cabeçalho !-->
 <header>
 	<!-- Headline aqui!-->
-	
-	
+		<div class="headline">
+		<div class="container">
+			<div class="row">
+				<h1>Descubra ahora cómo los jóvenes están <br><span>Ganando miles de dólares</i>Solo por ver vídeos</span> en sus teléfonos móviles</h1>
+			</div>
+		</div>
+		</div>	
 	<!-- Headline !-->	
 </header>
 <!-- Cabeçalho !-->
@@ -89,8 +172,8 @@
   
     <!-- Script Delay !-->
     <script type="text/javascript">    
-    var tmin = 10; //troque o numeral pelos minutos de pitch e ; no final
-    var tseg = 0; //troque o numeral pelos segundos do pitch e ; no final
+    var tmin = 0; //troque o numeral pelos minutos de pitch e ; no final
+    var tseg = 5; //troque o numeral pelos segundos do pitch e ; no final
 
     // ~ ATENÇÃO!!! NÃO MEXA EM NADA DAQUI PARA BAIXO! ~ //
 
@@ -113,7 +196,7 @@
             <div class="row">
                 <div class="col-md-12 col-md-12 col-lg-12">
                     <!-- Link da página de destinho !-->
-                    <a href="#" class="cta-vsl pulsar">QUIERO EMPEZAR AHORA</a>
+                    <a href="https://go.hotmart.com/H74559855P?ap=e702" class="cta-vsl pulsar">QUIERO EMPEZAR AHORA</a>
                 </div>          
             </div>
         </div>
