@@ -57,83 +57,44 @@
 <link rel="dns-prefetch" href="https://player-vz-50b57fb7-72c.tv.pandavideo.com.br">
 <link rel="dns-prefetch" href="https://vz-50b57fb7-72c.b-cdn.net">
 <!-- TRAQUEAMENTO PV -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
 <script>
-$('a[href^="#"]').on('click', function(e) {
-    e.preventDefault();
-    var id = $(this).attr('href'),
-            targetOffset = $(id).offset().top;
-            
-    $('html, body').animate({ 
-        scrollTop: targetOffset - 100
-    }, 500);
-});
-    function parseQuery(qstr) {
-        var query = {};
-        var a = (qstr[0] === '?' ? qstr.substr(1) : qstr).split('&');
-        for (var i = 0; i < a.length; i++) {
-            var b = a[i].split('=');
-            query[decodeURIComponent(b[0])] = decodeURIComponent(b[1] || '');
-        }
-        return query;
+    let prefix = ["https://payment.hotmart.com", "https://pay.hotmart.com"];
+function getParams() {
+
+    let t = "",
+
+        e = window.top.location.href,
+
+        r = new URL(e);
+
+    if (null != r) {
+
+        let a = r.searchParams.get("utm_source"),
+
+            n = r.searchParams.get("utm_medium"),
+
+            o = r.searchParams.get("utm_campaign"),
+
+            m = r.searchParams.get("utm_term"),
+
+            c = r.searchParams.get("utm_content"); - 1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`), console.log(t)
+
     }
 
-    function encodeQuery(obj) {
-        var str = [];
-        for (var p in obj)
-            if (obj.hasOwnProperty(p)) {
-                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-            }
-        return str.join("&");
-    }
+    return t
 
-    function addQueryParameterToDomain(key, value) {
-        var links = document.querySelectorAll('a[href].checkout'),
-            linksLength = links.length,
-            index,
-            queryIndex,
-            queryString,
-            query,
-            url,
-            domain,
-            colonSlashSlash;
+}! function() {
 
-        for (index = 0; index < linksLength; ++index) {
-            url = links[index].href,
-                queryIndex = url.indexOf('?'),
-                colonSlashSlash = url.indexOf('://');
+    var t = new URLSearchParams(window.location.search);
 
-            domain = url.substring(colonSlashSlash + 3);
-            domain = domain.substring(0, domain.indexOf('/'));
+    t.toString() && document.querySelectorAll("a").forEach(function(e) {
 
-            if (queryIndex === -1) {
-                url += '?' + key + '=' + value;
-            } else {
-                queryString = url.substring(queryIndex);
-                url = url.substring(0, queryIndex);
-                query = parseQuery(queryString);
+        for (let r = 0; r < prefix.length; r++) - 1 !== e.href.indexOf(prefix[r]) && (-1 === e.href.indexOf("?") ? e.href += "?" + t.toString() + getParams() : e.href += "&" + t.toString() + getParams())
 
-                query[key] = value;
+    })
 
-                url += '?' + encodeQuery(query);
-            }
+}();
 
-            links[index].href = url;
-        }
-    }
-
-    function addQuery(item) {
-        var arr = item.split('=');
-        if(arr[0] != null && arr[1] != undefined) {
-                addQueryParameterToDomain(arr[0], arr[1]);
-        }
-    }
-
-    jQuery(function() {
-        var url = window.location.search.replace("?", "");
-        var itens = url.split('&');
-        itens.forEach(addQuery);
-    });
 </script>
 
 </head>
