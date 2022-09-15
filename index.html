@@ -13,85 +13,82 @@
 <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 <!-- Folha de estilo Animate !-->
 <!-- Google Analytics -->
-
-<!-- TRAQUEAMENTO PV -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-240647404-1"></script>
 <script>
-$('a[href^="#"]').on('click', function(e) {
-    e.preventDefault();
-    var id = $(this).attr('href'),
-            targetOffset = $(id).offset().top;
-            
-    $('html, body').animate({ 
-        scrollTop: targetOffset - 100
-    }, 500);
-});
-    function parseQuery(qstr) {
-        var query = {};
-        var a = (qstr[0] === '?' ? qstr.substr(1) : qstr).split('&');
-        for (var i = 0; i < a.length; i++) {
-            var b = a[i].split('=');
-            query[decodeURIComponent(b[0])] = decodeURIComponent(b[1] || '');
-        }
-        return query;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-240647404-1');
+</script>
+<!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '594952732183820');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=594952732183820&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<link rel="preload" href="https://player-vz-50b57fb7-72c.tv.pandavideo.com.br/embed/css/styles.css" as="style">
+<link rel="preload" href="https://player-vz-50b57fb7-72c.tv.pandavideo.com.br/embed/js/main.bundle.js" as="script">
+<link rel="prerender" href="https://player-vz-50b57fb7-72c.tv.pandavideo.com.br/embed/?v=e10e9143-9928-409f-889b-ad1f5577a790">
+<link rel="preload" href="https://player-vz-50b57fb7-72c.tv.pandavideo.com.br/embed/js/hls.js" as="script">
+<link rel="preload" href="https://player-vz-50b57fb7-72c.tv.pandavideo.com.br/embed/js/plyr.polyfilled.min.js" as="script">
+<link rel="preload" href="https://config.tv.pandavideo.com.br/vz-50b57fb7-72c/e10e9143-9928-409f-889b-ad1f5577a790.json" as="fetch">
+<link rel="preload" href="https://config.tv.pandavideo.com.br/vz-50b57fb7-72c/config.json" as="fetch">
+<link rel="preload" href="https://b-vz-50b57fb7-72c.tv.pandavideo.com.br/e10e9143-9928-409f-889b-ad1f5577a790/playlist.m3u8" as="fetch">
+<link rel="dns-prefetch" href="https://b-vz-50b57fb7-72c.tv.pandavideo.com.br">
+<link rel="dns-prefetch" href="https://player-vz-50b57fb7-72c.tv.pandavideo.com.br">
+<link rel="dns-prefetch" href="https://vz-50b57fb7-72c.b-cdn.net">
+<!-- TRAQUEAMENTO PV -->
+<script>
+    let prefix = ["https://payment.hotmart.com", "https://pay.hotmart.com"];
+function getParams() {
+
+    let t = "",
+
+        e = window.top.location.href,
+
+        r = new URL(e);
+
+    if (null != r) {
+
+        let a = r.searchParams.get("utm_source"),
+
+            n = r.searchParams.get("utm_medium"),
+
+            o = r.searchParams.get("utm_campaign"),
+
+            m = r.searchParams.get("utm_term"),
+
+            c = r.searchParams.get("utm_content"); - 1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`), console.log(t)
+
     }
 
-    function encodeQuery(obj) {
-        var str = [];
-        for (var p in obj)
-            if (obj.hasOwnProperty(p)) {
-                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-            }
-        return str.join("&");
-    }
+    return t
 
-    function addQueryParameterToDomain(key, value) {
-        var links = document.querySelectorAll('a[href].checkout'),
-            linksLength = links.length,
-            index,
-            queryIndex,
-            queryString,
-            query,
-            url,
-            domain,
-            colonSlashSlash;
+}! function() {
 
-        for (index = 0; index < linksLength; ++index) {
-            url = links[index].href,
-                queryIndex = url.indexOf('?'),
-                colonSlashSlash = url.indexOf('://');
+    var t = new URLSearchParams(window.location.search);
 
-            domain = url.substring(colonSlashSlash + 3);
-            domain = domain.substring(0, domain.indexOf('/'));
+    t.toString() && document.querySelectorAll("a").forEach(function(e) {
 
-            if (queryIndex === -1) {
-                url += '?' + key + '=' + value;
-            } else {
-                queryString = url.substring(queryIndex);
-                url = url.substring(0, queryIndex);
-                query = parseQuery(queryString);
+        for (let r = 0; r < prefix.length; r++) - 1 !== e.href.indexOf(prefix[r]) && (-1 === e.href.indexOf("?") ? e.href += "?" + t.toString() + getParams() : e.href += "&" + t.toString() + getParams())
 
-                query[key] = value;
+    })
 
-                url += '?' + encodeQuery(query);
-            }
+}();
 
-            links[index].href = url;
-        }
-    }
-
-    function addQuery(item) {
-        var arr = item.split('=');
-        if(arr[0] != null && arr[1] != undefined) {
-                addQueryParameterToDomain(arr[0], arr[1]);
-        }
-    }
-
-    jQuery(function() {
-        var url = window.location.search.replace("?", "");
-        var itens = url.split('&');
-        itens.forEach(addQuery);
-    });
 </script>
 
 </head>
@@ -118,7 +115,7 @@ $('a[href^="#"]').on('click', function(e) {
         <div class="container">
             <div class="row">
                 <!-- Scrip do vídeo aqui !-->
-                <script type="text/javascript" id="scr_6268ab945045c3000aeb48b8">var s=document.createElement("script");s.src="https://scripts.converteai.net/7ccc1362-2860-4371-917c-92ecfbec948a/players/6268ab945045c3000aeb48b8/player.js",s.async=!0,document.head.appendChild(s);</script>
+                    <div style="position:relative;padding-top:56.25%;"><iframe id="panda-417e5263-246c-4f0e-9ed3-ff2c785612e7" src="https://player-vz-06aec27c-47a.tv.pandavideo.com.br/embed/?v=417e5263-246c-4f0e-9ed3-ff2c785612e7" style="border:none;position:absolute;top:0;left:0;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen=true width="100%" height="100%"></iframe></div>  
 
                 <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-volume-up-fill" viewBox="0 0 16 16">
               <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
